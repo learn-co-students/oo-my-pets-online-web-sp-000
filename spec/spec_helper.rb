@@ -1,4 +1,4 @@
-require_relative '../config/environment'
+require_relative '../config/environment.rb'
 
 RSpec.configure do |config|
   # config here
