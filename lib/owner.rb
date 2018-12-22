@@ -3,9 +3,10 @@ class Owner
   attr_accessor :pets
   @@all = []
   
-  def initialize
+  def initialize(name)
     self.pets = {fishes: [], cats: [], dogs:[]}
     @species = "human"
+    @name = name
     @@all << self
   end
   
@@ -15,6 +16,10 @@ class Owner
   
   def self.reset_all
     @@all.clear
+  end
+  
+  def self.count
+    @@all.length
   end
   
   def say_species
