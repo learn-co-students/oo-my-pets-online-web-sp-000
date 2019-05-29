@@ -7,6 +7,7 @@ class Owner
    @@counter = 0
    
   def initialize(owner)
+    @pets = {fishes: [], cats: [], dogs: []}
     @owner = owner
     @@all << self
     @@counter += 1
@@ -34,26 +35,59 @@ class Owner
     "I am a #{@owner}."
   end
   
-  def pets
-    @pets = {fishes: [], cats: [], dogs: []}
-  end
+#  def pets
+#    @pets = {fishes: [], cats: [], dogs: []}
+#  end
 
   def buy_fish(name)
     fish = Fish.new(name)
-
-# => {:fishes=>[#<Fish:0x0000000002242a78 @mood="nervous", @name="Bubbles">],
-# :cats=>[],
-# :dogs=>[]}
-
-# expect(owner.pets[:fishes].count).to eq(1)
-
     @pets[:fishes] << fish
-    
   end
-# @pets[:fishes].count  - unutar buy_fish
-# => 1  
-# @pets[:fishes].count - izvan svih def
-# NoMethodError: undefined method `[]' for nil:NilClass
-#from (pry):1:in `<class:Owner>'
 
+  def buy_cat(name)
+    cat = Cat.new(name)
+    @pets[:cats] << cat
+  end
+  
+  def buy_dog(name)
+    dog = Dog.new(name)
+    @pets[:dogs] << dog
+  end  
+
+
+  def walk_dogs
+    @pets.each do |key,value|
+     value.each do |moods|
+      moods.mood = "happy" 
+    end
+     end
+  end
+
+  def play_with_cats
+    @pets.each do |key,value|
+     value.each do |moods|
+      moods.mood = "happy" 
+    end
+     end
+  end
+
+  def feed_fish
+    @pets.each do |key,value|
+     value.each do |moods|
+      moods.mood = "happy" 
+    end
+     end
+  end
+  
+  def sell_pets
+    if @pets = {}
+    @pets.each do |key,value|
+     value.each do |moods|
+      moods.mood = "nervous" 
+    end
+     end
+           binding.pry
+
+  end
+end
 end
