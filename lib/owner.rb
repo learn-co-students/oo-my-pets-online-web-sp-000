@@ -47,7 +47,7 @@ class Owner
 
 # expect(owner.pets[:fishes].count).to eq(1)
 
-    @pets[:fishes].countpets[:fishes] << fish
+    @pets[:fishes] << fish
     
   end
 # @pets[:fishes].count  - unutar buy_fish
