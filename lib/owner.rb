@@ -55,38 +55,35 @@ class Owner
   end  
 
 
+#  def play_with_cats
+#    @pets.each do |key,value|
+#     value.each do |moods|
+#      moods.mood = "happy" 
+#    end
+#     end
+#  end
+
   def walk_dogs
-    @pets.each do |key,value|
-     value.each do |moods|
-      moods.mood = "happy" 
-    end
-     end
-  end
+    pets[:dogs].map {|dog| dog.mood = "happy"}
+
+   end
 
   def play_with_cats
-    @pets.each do |key,value|
-     value.each do |moods|
-      moods.mood = "happy" 
-    end
-     end
+    pets[:cats].map {|cat| cat.mood = "happy"}
   end
 
   def feed_fish
-    @pets.each do |key,value|
-     value.each do |moods|
-      moods.mood = "happy" 
-    end
-     end
+    pets[:fishes].map {|fish| fish.mood = "happy"}
   end
   
   def sell_pets
-    if @pets = {}
-    @pets.each do |key,value|
-     value.each do |moods|
-      moods.mood = "nervous" 
+    pets.each do |type, pets|
+      pets.map {|pet| pet.mood = "nervous"}
     end
-     end
-
+    pets.clear
   end
-end
+  
+  def list_pets
+    "I have #{pets[:fishes].size} fish, #{pets[:dogs].size} dog(s), and #{pets[:cats].size} cat(s)."
+  end
 end
