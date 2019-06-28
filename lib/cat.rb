@@ -20,6 +20,17 @@ class Cat
   end
 end
 
+
+
+
+
+
+
+
+
+
+
+
 # class Cat
 #   attr_reader :name
 #   attr_accessor :mood
