@@ -98,6 +98,7 @@ describe Owner do
     describe "#walk_dogs" do
       it "walks the dogs which makes the dogs' moods happy" do
         dog = Dog.new("Daisy", @owner)
+        # binding.pry
         @owner.walk_dogs
         expect(dog.mood).to eq("happy")
       end
