@@ -1,10 +1,15 @@
 class Dog
-  attr_accessor :mood
+  attr_accessor :mood, :owner
   attr_reader :name
 
-  def initialize(name, mood = "nervous")        #Dog init with a name and nervous mood
+  def initialize(name, owner, mood = "nervous")        #Dog init with a name and nervous mood
     @name = name
     @mood = mood
+    @owner = owner
+    @@all << self
   end
 
-#end
+  def self.all
+    return @@all
+  end
+end
