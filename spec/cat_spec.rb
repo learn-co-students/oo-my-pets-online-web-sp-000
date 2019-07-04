@@ -3,13 +3,8 @@ require_relative 'spec_helper.rb'
 describe Cat do
 
   before do
-    @hermione = Owner.new("Hermione")
+    @hermione = Owner.new("human", "Hermione")
     @cat = Cat.new("Crookshanks", @hermione)
-  end
-
-  after do 
-    Owner.all.clear
-    Cat.all.clear
   end
 
   it "can initialize a cat" do
@@ -33,9 +28,13 @@ describe Cat do
     expect(@cat.mood).to eq("playful")
   end
 
-  it "knows all the cats" do 
+  it "knows all the cats" do
     Cat.all.include?(@cat)
   end
 
-end
+  after do
+    Owner.all.clear
+    Cat.all.clear
+  end
 
+end

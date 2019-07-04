@@ -3,14 +3,10 @@ require_relative 'spec_helper.rb'
 describe Dog do
 
   before do
-    @timmy = Owner.new("Timmy")
+    @timmy = Owner.new("human", "Timmy")
     @dog = Dog.new("Lassie", @timmy)
   end
 
-  after do 
-    Owner.all.clear
-    Dog.all.clear
-  end
 
   it "can initialize a dog" do
     expect(@dog).to be_a(Dog)
@@ -33,8 +29,13 @@ describe Dog do
     expect(@dog.mood).to eq("hungry")
   end
 
-  it "knows all the dogs" do 
+  it "knows all the dogs" do
     Dog.all.include?(@dog)
+  end
+
+  after do
+    Owner.all.clear
+    Dog.all.clear
   end
 
 end

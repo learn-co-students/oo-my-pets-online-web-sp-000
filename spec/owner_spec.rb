@@ -4,13 +4,7 @@ require_relative 'spec_helper.rb'
 describe Owner do
 
   before do
-    @owner = Owner.new("Victoria")
-  end
-
-  after do 
-    Owner.all.clear
-    Cat.all.clear
-    Dog.all.clear
+    @owner = Owner.new("human")
   end
 
   context 'Class methods' do
@@ -21,8 +15,8 @@ describe Owner do
 
     it ".count returns the number of owners that have been created" do
       expect(Owner.count).to eq(1)
-      Owner.new("Melanie")
-      Owner.new("Ginger")
+      Owner.new("human", "Marge")
+      Owner.new("human", "Bob")
       expect(Owner.count).to eq(3)
     end
 
@@ -140,4 +134,11 @@ describe Owner do
       end
     end
   end
+
+  after do
+    Owner.all.clear
+    Cat.all.clear
+    Dog.all.clear
+  end
+
 end
