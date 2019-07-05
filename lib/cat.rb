@@ -9,5 +9,9 @@ class Cat
     @@all << self                     #add all instances to class var
   end
 
+  def self.all
+    return @@all
+  end
 
 end
+#

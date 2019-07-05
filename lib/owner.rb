@@ -1,6 +1,7 @@
 class Owner
 
-  attr_accessor :name, :pets
+  attr_accessor :pets
+  attr_reader :species, :name           #species/name can't change its species only reads!
 
   @@all = []
 
@@ -21,7 +22,7 @@ class Owner
   def self.reset_all
     return @@all.clear                  #clear (reset) our owner array
   end
-  
+
   def say_species
        "I am a #{self.species}."
    end
