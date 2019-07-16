@@ -55,7 +55,7 @@ describe "Associations" do
         @owner.buy_cat("Crookshanks")
         @owner.buy_cat("Garfield")
 
-        expect(@owner.cats.count).to eq(6)
+        expect(@owner.cats.count).to eq(3)
       end
     end
 
@@ -71,7 +71,7 @@ describe "Associations" do
         @owner.buy_dog("Max")
         @owner.buy_dog("Chip")
 
-        expect(@owner.dogs.count).to eq(6)
+        expect(@owner.dogs.count).to eq(3)
       end
     end
 
