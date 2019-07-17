@@ -52,8 +52,12 @@ class Owner
       cat.mood = "nervous"
       cat.owner = nil
       @cats = []
-      @dogs = [] 
+      @dogs = []
     end
+  end
+
+  def list_pet
+    "I have #{@dogs.length} dog(s), and #{@cats.length} cat(s)." 
   end
 
   def self.all
