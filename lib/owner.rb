@@ -13,7 +13,6 @@ class Owner
     @dogs = []
     @pets = { dogs: [], cats: []}
     @@owners << self
-    binding.pry
   end
 
   def self.all
@@ -63,11 +62,10 @@ class Owner
   end
 
   def sell_pets
-    pets.each do |type, pet|
-      pet.each do |p|
-        p.mood = "nervous"
-      end
-
+    pets_arr = dogs + cats
+    pets_arr.each do |pet|
+      pet.mood = "nervous"
+      pet.owner = nil
     end
      pets.clear
   end
