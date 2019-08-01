@@ -1,5 +1,5 @@
 class Cat
-  attr_accessor :mood
+  attr_accessor :mood, :owner
   @@all = []
   # code goes here
   def initialize(name, owner)

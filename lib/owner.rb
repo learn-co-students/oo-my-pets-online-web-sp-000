@@ -35,12 +35,12 @@ def feed_cats
 end
 
 def sell_pets
-    self.cats.each {|e| e.mood = "nervous" }
-    self.dogs.each {|e| e.mood = "nervous" }
+    self.cats.each {|e| e.mood = "nervous"
+    e.owner = nil}
+    self.dogs.each {|e| e.mood = "nervous"
+    e.owner = nil }
     self.cats.clear
     self.dogs.clear
-
-
 end
 
 
