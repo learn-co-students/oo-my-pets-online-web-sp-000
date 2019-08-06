@@ -8,10 +8,16 @@ class Dog
     @mood = "nervous"
     @@all << self 
     @owner = owner
-    owner.dogs << self
+    @owner.pets[:dogs] << self
   end 
   
-  def Dog.all 
+  def self.all 
     @@all 
   end 
+  
+  def sell
+    @mood = 'nervous'
+    @owner.pets[:dogs].delete(self)
+    @owner = nil
+  end
 end
