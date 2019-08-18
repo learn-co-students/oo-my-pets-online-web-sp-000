@@ -6,7 +6,6 @@ class Owner
     @name = name
   end
   
-  owner_obj = Owner.new
   def name
     @name
   end
