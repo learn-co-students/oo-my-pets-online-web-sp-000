@@ -1,8 +1,8 @@
 require "pry"
 class Cat
-  attr_accessor :name, :owner, :owner_obj
+  attr_accessor :name, :owner
   
-  def initialize(name, owner_obj)
+  def initialize(name, owner)
     @name = name
     @owner = owner
   end
