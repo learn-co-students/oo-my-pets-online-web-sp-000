@@ -57,5 +57,10 @@ class Owner
   def buy_dog(a_name)
     new_dog = Dog.new(a_name, self)
   end
-    
+  
+  def walk_dogs
+    Dog.mood = "Happy"
+  end
+  
+  
 end

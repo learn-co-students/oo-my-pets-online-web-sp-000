@@ -16,13 +16,13 @@ class Cat
     @@all
   end
   
+  def self.all
+    @@all
+  end
+  
   def save
     @@all << self
     self
-  end
-  
-  def owner
-    @owner
   end
 
 end
