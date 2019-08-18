@@ -40,12 +40,22 @@ class Owner
   
   def cats
     Cat.all.select do |d_cat|
-      d_cat == self
+      d_cat.owner == self
     end
   end
-    
+  
   def buy_cat(a_name)
     new_cat = Cat.new(a_name, self)
+  end
+  
+  def dogs
+    Dog.all.select do |d_dog|
+      d_dog.owner == self
+    end
+  end
+  
+  def buy_dog(a_name)
+    new_dog = Dog.new(a_name, self)
   end
     
 end

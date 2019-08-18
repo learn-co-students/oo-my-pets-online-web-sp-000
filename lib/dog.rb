@@ -8,14 +8,20 @@ class Dog
     @mood = "nervous"
     @name = name
     @owner = owner
+    self.save
   end
   
   def name
     @name
   end
   
-  def self.all
-    @@all
+  def save
+    @@all << self
+    self
+  end
+  
+  def owner
+    @owner
   end
   
 end
