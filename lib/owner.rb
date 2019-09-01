@@ -55,12 +55,12 @@ class Owner
 
   def sell_pets
     #binding.pry
-    self.dogs do |dog|
+    self.dogs.each do |dog|
       dog.mood = "nervous"
       dog.owner = nil
     end
 
-    self.cats do |cat|
+    self.cats.each do |cat|
       cat.mood = "nervous"
       cat.owner = nil
     end
