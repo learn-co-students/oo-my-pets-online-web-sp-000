@@ -1,3 +1,5 @@
+require "pry"
+
 class Owner
   attr_reader :name, :owner, :species
   attr_accessor :pets
@@ -6,10 +8,9 @@ class Owner
 
   def initialize(name)
     @name = name
-    @owner = name
     @species = "human"
     @@all << self
-    @pets = {:fishes => [], :dogs => [], :cats => []}
+    @pets = {:dogs => [], :cats => []}
   end
 
   def say_species
@@ -32,7 +33,16 @@ class Owner
 
   #instance methods
   def cats
-    return Cats.cats
-
+    Cat.all.select {|pet| pet.owner == self}
   end
+
+  def dogs
+    Dog.all.select {|pet| pet.owner == self}
+  end
+
+  def buy_cat (name)
+    @owner = owner
+    @pets << Cat.new(name)
+  end
+
 end
