@@ -8,9 +8,16 @@ class Cat
     @owner = owner # Hermione
     @mood = "nervous"
     @@all << self
+    
   end
 
   def self.all
     @@all
   end
+
+  def cats (name)
+    cats = name
+    Owner.all.select {|name| name == cat}
+  end
+
 end
