@@ -28,13 +28,11 @@ class Owner
   end
   
   def cats 
-    new_arr = []
-    new_arr << Cat.all.each {|pet| pet.owner == Owner.name}
-    new_arr
+    Cat.all.select {|pet| pet.owner == self}
   end
   
   def dogs 
-    Dog.all.each {|pet| pet.owner == Owner.name}
+    Dog.all.select {|pet| pet.owner == self}
   end
   
   def buy_cat(name)
