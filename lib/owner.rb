@@ -52,11 +52,11 @@ class Owner
   end
   
   def sell_pets
-    
+    Dog.all.each {|dog| dog.mood = "nervous" && dog.owner = nil} && Cat.all.each {|cat| cat.mood = "nervous" && cat.owner = nil}
   end
   
   def list_pets
-    
+    p "I have #{dogs.count} dog(s), and #{cats.count} cat(s)."
   end
   
 end
